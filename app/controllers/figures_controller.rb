@@ -27,15 +27,16 @@ class FiguresController < ApplicationController
       params["figure"]["landmark_ids"].each do |landmark_id|
          landmark = Landmark.find_by(id: landmark_id.to_i)
          landmark.figure = @figure
+         landmark.save
       end
     end
 
     if params["landmark"]["name"] != "" #checks that they filled in a new landmark
       landmark = Landmark.find_or_create_by(name: params["landmark"]["name"])
       landmark.figure = @figure
+      landmark.save
     end
-
-    redirect to 'figures/show'
+    redirect to "figures/show"
   end
 
 end

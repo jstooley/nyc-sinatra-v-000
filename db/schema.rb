@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20171122172207) do
 
   create_table "figure_titles", force: :cascade do |t|
     t.integer  "figure_id"
-    t.integer  "titles_id"
+    t.integer  "title_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
