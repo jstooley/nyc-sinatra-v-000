@@ -8,6 +8,11 @@ class FiguresController < ApplicationController
     erb :'figures/new'
   end
 
+  get "/figures/:id" do
+    @figure = Figure.find_by(id: params[:id].to_i)
+    erb :'figures/show'
+  end
+
   post '/figures' do
 
     @figure = Figure.create(name: params["figure"]["name"])
@@ -36,11 +41,7 @@ class FiguresController < ApplicationController
       landmark.figure = @figure
       landmark.save
     end
-    redirect to "figures/show"
-  end
-
-  get "/figures/show" do
-    erb :'figures/show'
+    redirect to "figures/#{@figure.id}"
   end
 
 end
