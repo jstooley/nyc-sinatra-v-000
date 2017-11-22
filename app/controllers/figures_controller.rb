@@ -1,11 +1,11 @@
 class FiguresController < ApplicationController
 
-  get '/figures/new' do
-    erb :'figures/new'
+  get '/figures' do
+    erb :'figures/index'
   end
 
-  get '/figures/show' do
-    erb :'figures/show'
+  get '/figures/new' do
+    erb :'figures/new'
   end
 
   post '/figures' do
@@ -37,6 +37,10 @@ class FiguresController < ApplicationController
       landmark.save
     end
     redirect to "figures/show"
+  end
+
+  get "/figures/show" do
+    erb :'figures/show'
   end
 
 end
