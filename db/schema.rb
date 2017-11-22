@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20171122172207) do
   create_table "landmarks", force: :cascade do |t|
     t.string   "name"
     t.integer  "figure_id"
-    t.integer  "year_complete"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "year_completed"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "titles", force: :cascade do |t|
