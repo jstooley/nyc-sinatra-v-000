@@ -1,1 +1,9 @@
 
+<p><%= @figure.name%></p>
+
+<% landmarks = @figure.landmarks.ids%>
+<%if landmarks[0] != nil %>
+  <% landmarks.each do |landmark_id|%>
+    <%= Landmark.find_by(id: landmark_id).name %>
+  <%end%>
+<%end%>
