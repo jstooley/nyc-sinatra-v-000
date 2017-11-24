@@ -5,11 +5,6 @@ class FiguresController < ApplicationController
   end
 
   get '/figures/new' do
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> c8a2ff5ffb5410448a435f966567c64798cbebd5
     erb :'figures/new'
   end
 
