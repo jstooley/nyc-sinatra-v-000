@@ -52,7 +52,7 @@ class FiguresController < ApplicationController
   post "/figures/:id" do
     @figure = Figure.find_by(id: params[:id].to_i)
     @figure.name = params["figure"]["name"]
-    
+
 
     if FigureTitle.find_by(figure_id: @figure.id) != nil #clears figuretitle table of @figures titles
       FigureTitle.find_by(figure_id: @figure.id).delete
@@ -87,7 +87,11 @@ class FiguresController < ApplicationController
       landmark.figure = @figure
       landmark.save
     end
+
     @figure.save
+
+
+
     redirect to "figures/#{@figure.id}"
   end
 
