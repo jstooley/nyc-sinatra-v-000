@@ -4,7 +4,7 @@
   <input type = "text" name = "figure[name]" id = "figure_name" >
   <p>Select Titles</p>
   <%Title.all.each do |title|%>
-    <input type = 'checkbox' name = "figure[title_ids][]" id= "title_<%=title.id%>" value = "<%=title.id%>">title.name</input>
+    <input type = 'checkbox' name = "figure[title_ids][]" id= "title_<%=title.id%>" value = "<%=title.id%>"><%=title.name%></input>
   <%end%>
   <p>Enter A New Title</p>
   <input type = "text" name = "title[name]" id = "new_title">
