@@ -5,6 +5,7 @@ class FiguresController < ApplicationController
   end
 
   get '/figures/new' do
+
     erb :'figures/new'
   end
 
@@ -87,11 +88,7 @@ class FiguresController < ApplicationController
       landmark.figure = @figure
       landmark.save
     end
-
     @figure.save
-
-
-
     redirect to "figures/#{@figure.id}"
   end
 
